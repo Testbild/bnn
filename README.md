@@ -2,6 +2,8 @@ This Repository has been used in a project for the Deep Learning for Computer Vi
 
 The task was to count the amount of bees in a hive. This was done to determine how healthy the hive is and if different sources of food help bees to sustain better.
 
+![IMG_20210905_191429](https://user-images.githubusercontent.com/9366108/149152627-baa6d731-8ce6-4649-b8a6-db124370e9a2.jpg)
+
 This has been done in order to use the repository for this project:
 * modified the requirements.txt file to use the correct versions of the packages that have to be imported and adjusted the training to work with our image sizes
 * modified the labeling tool to be able to move within the image with w,a,s,d to navigate, as the images were much bigger than the screen resolution
