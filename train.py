@@ -13,6 +13,7 @@ import tensorflow as tf
 import test
 import time
 import util as u
+import gc
 
 np.set_printoptions(precision=2, threshold=10000, suppress=True, linewidth=10000)
 
@@ -89,6 +90,7 @@ train_model = model.construct_model(width=opts.patch_width_height or opts.width,
                                     use_skip_connections=not opts.no_use_skip_connections,
                                     base_filter_size=opts.base_filter_size,
                                     use_batch_norm=not opts.no_use_batch_norm)
+
 model.compile_model(train_model,
                     learning_rate=opts.learning_rate,
                     pos_weight=opts.pos_weight)
@@ -116,6 +118,10 @@ start_time = time.time()
 done = False
 step = 0
 
+
+
+latest_ckpt = u.latest_checkpoint_in_dir("ckpts/%s" % opts.run)
+train_model.load_weights("ckpts/%s/%s" % (opts.run, latest_ckpt)).expect_partial()
 while not done:
 
   # train a bit.
@@ -174,3 +180,7 @@ while not done:
     print("run_time %s remaining_time %s" % (u.hms(run_time), u.hms(remaining_time)))
     if remaining_time < 0:
       done = True
+
+
+  gc.collect()
+

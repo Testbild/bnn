@@ -243,5 +243,5 @@ def check_images(fnames):
   return width, height
 
 def latest_checkpoint_in_dir(ckpt_dir):
-  checkpoint_info = yaml.load(open("%s/checkpoint" % ckpt_dir).read())
+  checkpoint_info = yaml.load(open("%s/checkpoint" % ckpt_dir).read(), Loader=yaml.FullLoader)
   return checkpoint_info['model_checkpoint_path']

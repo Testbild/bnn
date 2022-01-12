@@ -18,7 +18,7 @@ def restore_model(run):
 
   # restore weights from latest checkpoint
   latest_ckpt = u.latest_checkpoint_in_dir("ckpts/%s" % run)
-  model.load_weights("ckpts/%s/%s" % (run, latest_ckpt))
+  model.load_weights("ckpts/%s/%s" % (run, latest_ckpt)).expect_partial()
 
   return opts, model
 

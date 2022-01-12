@@ -1,9 +1,11 @@
 pillow
-numpy
-tensorflow
-tensorflow-gpu
 python-utils
 scipy
 scikit-learn
 scikit-image
-pyyaml
+tensorflow==1.15
+tensorflow-gpu==1.15
+pyyaml==5.4.1
+numpy==1.16.5
+pywavelets==1.1.1
+matplotlib==3.1.0
