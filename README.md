@@ -1,3 +1,18 @@
+This Repository has been used in a project for the Deep Learning for Computer Vision Course from opencampus.sh
+
+The task was to count the amount of bees in a hive. This was done to determine how healthy the hive is and if different sources of food help bees to sustain better.
+
+This has been done in order to use the repository for this project:
+* modified the requirements.txt file to use the correct versions of the packages that have to be imported and adjusted the training to work with our image sizes
+* modified the labeling tool to be able to move within the image with w,a,s,d to navigate, as the images were much bigger than the screen resolution
+* modified training to reload the latest checkpoint and continue training from there
+
+Open TODOs:
+* Preprocess the images to only show the honeycomb before training
+* Find memory leak in training
+* Use image augmentation to get more consistend results
+
+# ORIGINAL DESCRIPTION BELOW
 # BNN v2
 
 unet style image translation from image of hive entrance to bitmap of location of center of bees.
